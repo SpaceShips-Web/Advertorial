@@ -6,8 +6,38 @@
     <title>SpacePets</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://i.postimg.cc/q7XpNTYL/pngicon.png" type="image/x-icon">
+        <style>
+        /* Estilos para o preloader */
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff; /* Fundo branco */
+            z-index: 9999; /* Ficar acima de tudo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em; /* Tamanho do texto */
+            text-align: center;
+            padding: 1em;
+        }
+
+        /* Estilos para o conteúdo da página */
+        #content {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            #preloader {
+                font-size: 1em; /* Tamanho do texto para dispositivos móveis */
+            }
+        }
+        </style>
 </head>
 <body>
+     <div id="preloader">Carregando...</div>
     <header>
         <div class="logo">
             <img src="https://i.postimg.cc/021604xt/jpg-spacepets.jpg" alt="LogoSpacePets">
@@ -142,6 +172,13 @@
 
         </article>
     </main>
+    <script>
+        // JavaScript para esconder o preloader quando a página estiver completamente carregada
+        window.addEventListener('load', function () {
+            document.getElementById('preloader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        });
+    </script>
     <footer>
         <p>© 2024 SpaceShips.</p>
     </footer>
